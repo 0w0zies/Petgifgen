@@ -39,10 +39,8 @@ def makegifframe(number):
             s2 = 0
         rendersprite = pygame.transform.scale(sprite,(s2 * (resolutionsize / 100),s * (resolutionsize / 100)))
         y = (spriteposition[1] + ((size - rendersprite.get_height())))
-        x = spriteposition[0] - ((rendersprite.get_width() - size) / 2)
+        x = spriteposition[0] - (((rendersprite.get_width() * 1) - size) / 2)
         add = ((resolutionsize / 100))
-        print(y * add)
-        print(x * add)
         gifframe.blit(rendersprite,(x * add,y * add))
     if hideframe == False:
         gifframe.blit(pygame.transform.scale(patframes[number],(112 * (resolutionsize / 100),112 * (resolutionsize / 100))),(0,(math.sin((number + 1) * 5) * sqeeshiness) * (resolutionsize / 100)))
